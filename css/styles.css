@@ -66,7 +66,7 @@ p {
 }
 
 #logo-container:hover img {
-  filter: drop-shadow(0px 0px 15px var(--highlight-color));
+  filter: drop-shadow(15px var(--highlight-color));
 }
 
 #job-title {
@@ -122,7 +122,6 @@ header {
 .navigation-list li {
   font-size: var(--font-size-large);
   padding-left: 10px;
-  padding: 0;
   margin: 0;
   height: 45px;
   position: relative;
@@ -193,11 +192,9 @@ button:focus {
   margin-right: auto;
 }
 
-/* start grid fallback */
-.grid__item {
+/* start grid fallback */.grid__item {
   display: inline-block;
-}
-/* end grid fallback */
+}/* end grid fallback */
 
 @supports (display: grid) {
   .project-list {
@@ -263,7 +260,8 @@ label {
   display: block;
 }
 
-input,textarea {
+input,
+textarea {
   box-sizing: border-box;
   padding: 2px;
   width: 100%;
@@ -271,7 +269,7 @@ input,textarea {
 
 #profile-img {
   box-sizing: border-box;
-  margin: 15px auto 15px auto;
+  margin: 15px auto;
   border-radius: 50%;
 }
 
@@ -349,30 +347,26 @@ footer {
 }
 
 /* Curly brackets go out */
-.navigation-list li a:before,
-.navigation-list li a:after {
+.navigation-list li a::before,
+.navigation-list li a::after {
   position: inline-block;
   opacity: 0;
-  top: 0px;
   transition: all 0.3s;
 }
 
-.navigation-list li a:before {
+.navigation-list li a::before {
   content: '{ ';
-  left: 0px;
   transform: translateX(10px);
 }
 
-.navigation-list li a:after {
+.navigation-list li a::after {
   content: ' }';
-  right: 0px;
   transform: translateX(-10px);
 }
 
-.navigation-list li a:hover:before,
-.navigation-list li a:hover:after {
+.navigation-list li a:hover::before,
+.navigation-list li a:hover::after {
   opacity: 1;
-  transform: translateX(0px);
   text-decoration: none;
 }
 
