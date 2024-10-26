@@ -192,9 +192,12 @@ button:focus {
   margin-right: auto;
 }
 
-/* start grid fallback */.grid__item {
+/* start grid fallback */
+.grid__item {
   display: inline-block;
-}/* end grid fallback */
+}
+
+/* end grid fallback */
 
 @supports (display: grid) {
   .project-list {
